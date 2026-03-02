@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muziekschool H&J</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Muziekschool H&J</h1>
+            <p>Luisterend oor voor talent!</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="..\html\index.html">Home</a></li>
+                <li><a href="..\html\overons.html">Over ons</a></li>
+                <li><a href="..\html\tarieven.html">Tarieven</a></li>
+                <li><a href="..\html\contact.html">Contact</a></li>
+                <li><a href="..\html\blog.html">Blog</a></li>
+                <li><a href="..\motivatie\index.html">Motivatie</a></li>
+                <li><a href="..\muziekvereniging\agenda\templates\agenda\agenda.html">Agenda</a></li>
+            </ul>
+        </nav>
+        <h1>📅 Agenda</h1>
+
+        {% if activiteiten %}
+        <table>
+            <tr>
+                <th>Datum</th>
+                <th>Tijd</th>
+                <th>Omschrijving</th>
+                <th>Kosten</th>
+            </tr>
+            {% for activiteit in activiteiten %}
+            <tr>
+                <td>{{ activiteit.datum }}</td>
+                <td>{{ activiteit.begin_tijd|time:"H:i" }} – {{ activiteit.eind_tijd|time:"H:i" }}</td>
+                <td>{{ activiteit.omschrijving }}</td>
+                <td>€ {{ activiteit.kosten }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>Er zijn nog geen activiteiten gepland.</p>
+        {% endif %}
+
+        <footer>
+            <p>&copy; Copyright 2026 Muziekschool H&J</p>
+            <p>(Dit is een oefenopdracht, alle informatie op deze website is fictief.)</p>
+        </footer> 
+    </body>
+</html>
