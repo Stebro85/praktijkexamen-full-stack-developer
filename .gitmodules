@@ -1,1 +1,4 @@
  
+[submodule "motivatie-app"]
+    path = motivatie-app
+    url = https://github.com/Stebro85/motivatie-app.git
