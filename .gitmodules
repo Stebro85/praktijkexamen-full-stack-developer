@@ -1,4 +1,3 @@
- 
-[submodule "motivatie-app"]
-    path = motivatie-app
-    url = https://github.com/Stebro85/motivatie-app.git
+[submodule "praktijkexamen-full-stack-developer"]
+    path = praktijkexamen-full-stack-developer
+    url = https://github.com/Stebro85/praktijkexamen-full-stack-developer.git
